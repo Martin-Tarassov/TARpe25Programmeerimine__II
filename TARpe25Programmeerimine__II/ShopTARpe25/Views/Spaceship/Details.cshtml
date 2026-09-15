@@ -1,0 +1,22 @@
+﻿@model ShopTARpe25.Models.Spaceship.SpaceshipDetailsViewModel
+
+<h2>Spaceship Details</h2>
+
+<dl>
+    <dt>Name</dt>
+    <dd>@Model.Name</dd>
+
+    <dt>Type</dt>
+    <dd>@Model.Classification</dd>
+
+    <dt>Built Date</dt>
+    <dd>@Model.BuiltDate</dd>
+
+    <dt>Crew</dt>
+    <dd>@Model.Crew</dd>
+
+    <dt>Engine Power</dt>
+    <dd>@Model.EnginePower</dd>
+</dl>
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>

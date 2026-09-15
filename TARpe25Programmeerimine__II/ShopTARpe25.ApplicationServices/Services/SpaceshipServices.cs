@@ -33,5 +33,40 @@ namespace ShopTARpe25.ApplicationServices.Services
 
             return domain;
         }
+
+        public async Task<Spaceship?> GetById(Guid id)
+        {
+            return await _context.Spaceships.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Spaceship> Update(SpaceshipDto dto)
+        {
+            var domain = await _context.Spaceships.FirstOrDefaultAsync(x => x.Id == dto.Id);
+
+            if (domain == null)
+                throw new Exception("Spaceship not found");
+
+            domain.Name = dto.Name;
+            domain.Classification = dto.Classification;
+            domain.BuiltDate = dto.BuiltDate;
+            domain.Crew = dto.Crew;
+            domain.EnginePower = dto.EnginePower;
+            domain.ModifiedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return domain;
+        }
+
+        public async Task Delete(Guid id)
+        {
+            var domain = await _context.Spaceships.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (domain != null)
+            {
+                _context.Spaceships.Remove(domain);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

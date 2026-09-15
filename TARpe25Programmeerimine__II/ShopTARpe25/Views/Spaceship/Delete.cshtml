@@ -1,0 +1,9 @@
+﻿@model ShopTARpe25.Models.Spaceship.SpaceshipDeleteViewModel
+
+<h2>Delete Spaceship</h2>
+
+<form asp-action="DeleteConfirmation" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

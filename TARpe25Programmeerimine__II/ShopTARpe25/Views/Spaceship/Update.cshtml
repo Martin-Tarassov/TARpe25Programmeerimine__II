@@ -1,0 +1,35 @@
+﻿@model ShopTARpe25.Models.Spaceship.SpaceshipUpdateViewModel
+
+<h2>Update Spaceship</h2>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Classification"></label>
+        <input asp-for="Classification" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BuiltDate"></label>
+        <input asp-for="BuiltDate" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Crew"></label>
+        <input asp-for="Crew" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="EnginePower"></label>
+        <input asp-for="EnginePower" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
