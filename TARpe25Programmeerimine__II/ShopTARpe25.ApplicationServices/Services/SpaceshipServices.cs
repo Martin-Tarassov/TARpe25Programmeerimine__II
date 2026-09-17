@@ -34,9 +34,12 @@ namespace ShopTARpe25.ApplicationServices.Services
             return domain;
         }
 
-        public async Task<Spaceship?> GetById(Guid id)
+        public async Task<Spaceship?> DetailsAsync(Guid id)
         {
-            return await _context.Spaceships.FirstOrDefaultAsync(x => x.Id == id);
+             var result = await _context.Spaceships
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return result;
         }
 
         public async Task<Spaceship> Update(SpaceshipDto dto)
